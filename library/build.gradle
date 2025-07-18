@@ -1,15 +1,16 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion COMPILE_SDK_VERSION as int
-
+    compileSdk COMPILE_SDK_VERSION as int
+    namespace "jp.co.cyberagent.gpuimage"
     defaultConfig {
         minSdkVersion MIN_SDK_VERSION as int
         targetSdkVersion TARGET_SDK_VERSION as int
 
         versionCode = VERSION_CODE as int
         versionName = VERSION_NAME
-        ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
+//        ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
+        ndk.abiFilters 'armeabi-v7a','arm64-v8a'
         externalNativeBuild {
             cmake { cppFlags "" }
         }
@@ -17,7 +18,7 @@ android {
     externalNativeBuild {
         cmake { path "src/main/cpp/CMakeLists.txt" }
     }
-
+    ndkVersion "21.4.7075529"
     buildTypes {
         debug {
             debuggable true
@@ -53,4 +54,4 @@ ext {
 // apply from: 'https://gist.githubusercontent.com/wasabeef/cf14805bee509baf7461974582f17d26/raw/bintray-v1.gradle'
 // apply from: 'https://gist.githubusercontent.com/wasabeef/cf14805bee509baf7461974582f17d26/raw/install-v1.gradle'
 
-apply from: 'https://gist.githubusercontent.com/wasabeef/2f2ae8d97b429e7d967128125dc47854/raw/maven-central-v1.gradle'
+//apply from: 'https://gist.githubusercontent.com/wasabeef/2f2ae8d97b429e7d967128125dc47854/raw/maven-central-v1.gradle'
