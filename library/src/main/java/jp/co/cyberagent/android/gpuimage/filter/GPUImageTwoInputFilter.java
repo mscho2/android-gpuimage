@@ -135,4 +135,8 @@ public class GPUImageTwoInputFilter extends GPUImageFilter {
 
         texture2CoordinatesBuffer = bBuffer;
     }
+
+    public void setFilterSourceTexture2(final int filterSourceTexture2){
+        this.filterSourceTexture2 = filterSourceTexture2;
+    }
 }
