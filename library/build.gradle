@@ -9,8 +9,7 @@ android {
 
         versionCode = VERSION_CODE as int
         versionName = VERSION_NAME
-//        ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
-        ndk.abiFilters 'armeabi-v7a','arm64-v8a'
+        ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
         externalNativeBuild {
             cmake { cppFlags "" }
         }
@@ -18,7 +17,7 @@ android {
     externalNativeBuild {
         cmake { path "src/main/cpp/CMakeLists.txt" }
     }
-    ndkVersion "21.4.7075529"
+    ndkVersion "28.0.12674087"
     buildTypes {
         debug {
             debuggable true
